@@ -1,0 +1,45 @@
+.selectmenu {
+  width: 125px;
+  height: 20px;
+}
+
+.page-container {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+  }
+
+  #compID {
+    width: 70%;
+  }
+
+  #word {
+    width: 70%;
+  }
+
+  #getcompID {
+    margin: 0 auto;
+  }
+
+  #progresssection {
+    text-align: center;
+  }
+
+  #progress {
+   padding-left: 25px;
+  }
+
+  #calculatorbackground {
+ padding-left: 25px;
+  }
+
+  footer {
+    position: relative;
+    height: 62px;
+    width: 100%;
+    background: #111;
+    color: #fff;
+    padding: 1.5em 0 0.8em;
+
+  }
+

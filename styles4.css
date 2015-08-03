@@ -1,0 +1,43 @@
+#creditimage {
+   position: relative;
+    top: 50px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+}
+
+#creditbody {
+	   position: relative;
+    top: 150px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+#creditbodyheader {
+	text-align: center;
+}
+
+.featurette-heading {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.featurette-image {
+  margin-top: -100px;
+}
+
+
+footer {
+    position: relative;
+    top: 120px;
+   width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 1.5em 0 0.8em;
+}

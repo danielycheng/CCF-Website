@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chinese Christian Fellowship Progress Tracker</title>
+	<link href="/~dyc8av/final/images/CCF_Logo.jpg" rel="icon">
+	<link rel="stylesheet" href="styles1.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+
+	<script>
+	$(document).ready(function(){
+		$('#carousel').carousel();
+
+	});
+
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$( "#web-info" ).click(function() {
+			$( "#web-info" ).hide( "slow", function() {
+			});
+		});
+
+	});
+
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		var verse = ["And he who searches our heart knows the mind of the Spirit, because the Spirit intercedes for God's people in accordance with the will of God - Romans 8:27", "And God placed all things under his feet and appointed him to be head over everything for the church - Ephesians 1:22", " Finally, be strong in the Lord and in his mighty power. Put on the full armor of God, so that you can take your stand against the devil’s schemes. - Ephesians 6:10-11", "Better is one day in your courts than a thousand elsewhere; I would rather be a doorkeeper in the house of my God than dwell in the tents of the wicked. - Psalm 84:10", "Dear children, let us not love with words or speech but with actions and in truth. - 1 John 3:18", "No, in all these things we are more than conquerors through him who loved us. - Romans 8:37"];
+		index = 0;
+		$('#versechange').hover(	
+			function() {
+				var $this = $(versetext); 
+				$(versetext).text(verse[index++ % verse.length]);
+			},
+			function() {
+				var $this = $(versetext);
+			}
+			);
+
+	});
+
+</script>
+
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand nav-link" href="/~dyc8av/final/">Chinese Christian Fellowship</a>
+			</div> 
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/~dyc8av/final/about.html" class="nav-link">About</a></li>
+					<li><a href="/~dyc8av/final/credits.html" class="nav-link">Credits</a></li>
+					<li><a href="/~dyc8av/final/profile/" class="nav-link">Get Started</a></li>
+				</ul>
+			</div> 
+		</div> 
+	</nav> 
+
+
+	<div id="carousel" class="carousel slide" data-ride="carousel" data-wrap="true">
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+			<li data-target="#carousel" data-slide-to="3"></li>
+		</ol>
+
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="/~dyc8av/final/images/Summer.jpg" alt="Summer" style="width:100%;height:400px">
+			</div>
+			<div class="item">
+				<img src="/~dyc8av/final/images/Autumn.jpg" alt="Autumn" style="width:100%;height:400px">
+			</div>
+
+			<div class="item">
+				<img src="/~dyc8av/final/images/Winter.jpg" alt="Winter" style="width:100%;height:400px">
+			</div>
+
+			<div class="item">
+				<img src="/~dyc8av/final/images/Spring.jpg" alt="Spring" style="width:100%;height:400px">
+			</div>
+
+		</div>
+
+		<a class="left carousel-control" href="#carousel" role="button" data-slide="prev" id="prev-button">
+			<span class="icon-prev"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel" role="button" data-slide="next" id="next-button">
+			<span class="icon-next"></span>
+		</a>
+	</div>
+
+	<div class="container" id="infosection">
+		<h3 id="features" class="subhead">Features</h3>
+		<div class="row benefits">
+			<div class="col-md-4 col-sm-6 benefit">
+				<div class="benefit-ball">
+					<a href="/~dyc8av/final/profile/"><span class="glyphicon glyphicon-briefcase imagelink"></span></a>
+				</div>
+				<h3>Tracker</h3>
+				<p>Have you ever wanted improve your dedication to daily devotions?</p>
+			</div> 
+
+			<div class="col-md-4 col-sm-6 benefit">
+				<div class="benefit-ball" id="versechange">
+					<span class="glyphicon glyphicon-book imagelink"></span>
+				</div>
+				<h3>Hover above me</h3>
+				<p><i id="versetext">We love because He first loved us. - 1 John 4:19</i></p>
+			</div> 
+
+			<div class="col-md-4 col-sm-6 benefit">
+				<div class="benefit-ball">
+					<a href="/~dyc8av/final/profile/"><span class="glyphicon glyphicon-search imagelink"></span></a>
+				</div>
+				<h3>Counter</h3>
+				<p>Have you ever wished to easily count the words in the Bible?</p>
+			</div> 
+		</div> 
+	</div> 
+
+
+	<footer>
+		<div class="container clearfix">
+			<p class="text-center">
+				Daniel Cheng · dyc8av@virginia.edu · <a href="http://html5.validator.nu/?doc=http%3A%2F%2Fplato.cs.virginia.edu%2F%7Edyc8av%2Ffinal%2F">HTML5 validation results</a>
+			</p>
+		</div> 
+	</footer>
+
+
+
+</body>
+
+</html>

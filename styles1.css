@@ -1,0 +1,77 @@
+
+.carousel {
+   position: absolute;
+    top: 50px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+}
+
+.carousel .item {
+height: 400px;
+
+}
+
+.carousel-inner > .item > img {
+  position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 400px;
+    width: 100%;
+}
+
+
+.container {
+    max-width: 100%;
+}
+
+.subhead {
+  font-size: 2em;
+  text-align: center;
+  margin: 2em 0 0.5em;
+}
+.benefits {
+  margin-bottom: 3em;
+}
+.benefit {
+  margin: 1em 0;
+  text-align: center;
+}
+.benefit .benefit-ball {
+  background: #f0f0f0;
+  border-radius: 50%;
+  color: #333;
+  display: inline-block;
+  line-height: 1em;
+  padding: 3em;
+}
+.benefit .benefit-ball .glyphicon {
+  font-size: 3em;
+  position: relative;
+  top: -3px;
+  right: 1px;
+}
+
+
+footer {
+    position: relative;
+   width: 100%;
+  background: #111;
+  color: #fff;
+  padding: 1.5em 0 0.8em;
+}
+
+.imagelink {
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+

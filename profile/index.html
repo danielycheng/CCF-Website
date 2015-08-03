@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles3.css">
+  <link href="../images/CCF_Logo.jpg" rel="icon">
+  <link rel="stylesheet" href="css/metro-bootstrap.css">
+  <script src="js/jquery/jquery.min.js"></script>
+  <script src="js/jquery/jquery.widget.min.js"></script>
+  <script src="js/metro/metro.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $('#option-button').popover('show');
+
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    $("#getnumber").click(function() {
+
+      $.ajax({
+        url: 'calculate.php',
+        data: {book: $("#book").val(), word: $("#word").val()},
+        success: function(data){
+          $('#results').html(data);   
+        }
+      });
+    });
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    $("#selectreminder").click(function() {
+
+      $.ajax({
+        url: 'insertbooks.php',
+        data: {compID: $("#compID").val(), book1: $("#book1").val(), book2: $("#book2").val(), book3: $("#book3").val()},
+        success: function(data){
+          $('#bookresults').html(data);   
+        }
+      });
+    });
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    $("#getcompID").click(function() {
+
+      $.ajax({
+        url: 'loadcompid.php',
+        success: function(data){
+          $('#compIDresults').html(data);   
+          $.ajax({
+            url: 'getprogress.php',
+            data: {compIDlist: $("#compIDlist").val()},
+            success: function(data){
+              $("#loadeduser").html(data);   
+            }
+          });
+        }
+      });
+    });
+  });
+  </script>
+
+  <script>
+  function getprog(compID) {
+    $.ajax({
+      url: 'getprogress.php',
+      data: {compIDlist: $(compID).val()},
+      success: function(data){
+        $("#loadeduser").html(data);   
+      }
+    });
+  }
+  </script>
+
+
+  <script>
+  $(document).ready(function() {
+    $("#updateephdb").click(function() {
+
+      $.ajax({
+        url: 'updateephesians.php',
+        data: {compIDlist: $("#compIDlist").val(), ch1: document.getElementById('ch1e').checked, ch2: document.getElementById('ch2e').checked, ch3: document.getElementById('ch3e').checked, ch4: document.getElementById('ch4e').checked, ch5: document.getElementById('ch5e').checked, ch6: document.getElementById('ch6e').checked},
+        success: function(data){
+          $("#ephModal").modal('hide');  
+          $.ajax({
+            url: 'getprogress.php',
+            data: {compIDlist: $("#compIDlist").val()},
+            success: function(data){
+              $("#loadeduser").html(data);   
+            }
+          });
+        }
+      });
+
+    });
+  });
+  </script>
+
+
+  <script>
+  $(document).ready(function() {
+    $("#updatephildb").click(function() {
+
+      $.ajax({
+        url: 'updatephil.php',
+        data: {compIDlist: $("#compIDlist").val(), ch1: document.getElementById('ch1p').checked, ch2: document.getElementById('ch2p').checked, ch3: document.getElementById('ch3p').checked, ch4: document.getElementById('ch4p').checked},
+        success: function(data){
+          $("#philModal").modal('hide');  
+          $.ajax({
+            url: 'getprogress.php',
+            data: {compIDlist: $("#compIDlist").val()},
+            success: function(data){
+              $("#loadeduser").html(data);   
+            }
+          });
+        }
+      });
+
+    });
+  });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    $("#updateromdb").click(function() {
+
+      $.ajax({
+        url: 'updateromans.php',
+        data: {compIDlist: $("#compIDlist").val(), ch1: document.getElementById('ch1r').checked, ch2: document.getElementById('ch2r').checked, ch3: document.getElementById('ch3r').checked, ch4: document.getElementById('ch4r').checked, ch5: document.getElementById('ch5r').checked, ch6: document.getElementById('ch6r').checked, ch7: document.getElementById('ch7r').checked, ch8: document.getElementById('ch8r').checked, ch9: document.getElementById('ch9r').checked, ch10: document.getElementById('ch10r').checked, ch11: document.getElementById('ch11r').checked, ch12: document.getElementById('ch12r').checked, ch13: document.getElementById('ch13r').checked, ch14: document.getElementById('ch14r').checked, ch15: document.getElementById('ch15r').checked, ch16: document.getElementById('ch16r').checked},
+        success: function(data){
+          $("#romModal").modal('hide');  
+          $.ajax({
+            url: 'getprogress.php',
+            data: {compIDlist: $("#compIDlist").val()},
+            success: function(data){
+              $("#loadeduser").html(data);   
+            }
+          });
+        }
+      });
+
+});
+});
+</script>
+
+
+</head>
+
+<body role="document">
+
+ <div class="page-container">
+
+   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand nav-link" href="/~dyc8av/final/">Chinese Christian Fellowship</a>
+      </div> 
+
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/~dyc8av/final/about.html" class="nav-link">About</a></li>
+          <li><a href="/~dyc8av/final/credits.html" class="nav-link">Credits</a></li>
+          <li><a href="/~dyc8av/final/profile/" class="nav-link">Get Started</a></li>
+        </ul>
+      </div> 
+    </div> 
+  </nav> 
+
+  <div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left">
+
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
+          <ul class="nav" id="sidebar-nav">
+            <li><a href="#signupheader">Sign-up</a></li>
+            <li><a href="#counterheader">Bible Word Counter</a></li>
+            <li><a href="#progressheader">Progress</a></li>
+            <li><a href="#guestbook">Comments</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-9" data-spy="scroll" data-target="#sidebar-nav">
+        <div class="row">
+
+          <div class="col-sm-6">
+            <h1 id="signupheader">Sign-up</h1>
+            <div class="panel panel-info">
+             <div class="panel-heading"><h4>Create a user profile</h4></div>
+             <div id="signupsection">
+               <div id="progress">
+                <div class="form-group">
+                  <label for="compID">Computing ID</label>
+                  <input type="text" class="form-control" id="compID" name="compID" placeholder="Ex. dyc8av">
+                </div>
+                <div class="form-group">
+                  <label for="book1">Book 1</label>
+                  <select class="selectmenu" id="book1" name="book1">
+                    <option> </option>
+                    <option value="ephesians">Ephesians</option>
+                    <option value="philippians">Philippians</option>
+                    <option value="romans">Romans</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="book2">Book 2</label>
+                  <select class="selectmenu" id="book2" name="book2">
+                    <option> </option>
+                    <option value="ephesians">Ephesians</option>
+                    <option value="philippians">Philippians</option>
+                    <option value="romans">Romans</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="book3">Book 3</label>
+                  <select class="selectmenu" id="book3" name="book3">
+                    <option> </option>
+                    <option value="ephesians">Ephesians</option>
+                    <option value="philippians">Philippians</option>
+                    <option value="romans">Romans</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-info" id="selectreminder" >Submit</button>
+                <div id="bookresults">Submission Status</div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <h1 id="counterheader">Bible Word Counter</h1>
+          <div class="panel panel-info">
+           <div class="panel-heading"><h4>Discover the significance of language (KJV)</h4></div>
+           <div id="calculator">
+            <div id="calculatorbackground">
+              <div class="form-group">
+                <br>
+                <label for="book">Pick a book</label> <br>
+                <select class="selectmenu" id="book" name="book">
+                  <option value="Genesis">Genesis</option>
+                  <option value="Daniel">Daniel</option>
+                  <option value="Ephesians">Ephesians</option>
+                  <option value="Revelation">Revelation</option>
+                  <option value="Romans">Romans</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <br>
+                <label for="word">Choose a word</label>
+                <input type="text" class="form-control" id="word" name="word" placeholder="Ex. Jerusalem">
+              </div>
+              <br>
+              <button type="submit" class="btn btn-info" id="getnumber">Count</button>
+              <div id="results">The number of words are:</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h1 id="progressheader">Progress</h1>
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h4>Track me</h4></div>
+      <div class="panel-body">
+        <div id="progresssection">
+          <div class="col-sm-4">
+          </div>
+          <div class="col-sm-4">
+            <button type="submit" class="btn btn-primary" id="getcompID">Select a user</button>
+            <br>
+            <br>
+            <div id="compIDresults"></div>
+          </div>
+          <div class="col-sm-4">
+          </div>
+
+          <br>
+          <br>
+          <br>
+          <br>
+          <div id="loadeduser"></div>
+        </div>
+
+        <div class="modal fade" id="ephModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabeleph" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabeleph">Ephesians Progress</h4>
+              </div>
+              <div class="modal-body"> 
+               <div class="checkbox">
+                <label>
+                  <input id="ch1e" type="checkbox"> Chapter 1
+                </label>
+                <br>
+                <label>
+                  <input id="ch2e" type="checkbox"> Chapter 2
+                </label>
+                <br>
+                <label>
+                  <input id="ch3e" type="checkbox"> Chapter 3
+                </label>
+                <br>
+                <label>
+                  <input id="ch4e" type="checkbox"> Chapter 4
+                </label>
+                <br>
+                <label>
+                  <input id="ch5e" type="checkbox"> Chapter 5
+                </label>
+                <br>
+                <label>
+                  <input id="ch6e" type="checkbox"> Chapter 6
+                </label>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+             <p>Click to mark chapters as read</p>
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary" id="updateephdb">Update</button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class="modal fade" id="philModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabelphil" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabelphil">Philippians Progress</h4>
+          </div>
+          <div class="modal-body">
+            <div class="checkbox">
+              <label>
+                <input id="ch1p" type="checkbox"> Chapter 1
+              </label>
+              <br>
+              <label>
+                <input id="ch2p" type="checkbox"> Chapter 2
+              </label>
+              <br>
+              <label>
+                <input id="ch3p" type="checkbox"> Chapter 3
+              </label>
+              <br>
+              <label>
+                <input id="ch4p" type="checkbox"> Chapter 4
+              </label>
+            </div>
+          </div>
+          <div class="modal-footer">
+           <p>Click to mark chapters as read</p>
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary" id="updatephildb">Update</button>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="modal fade" id="romModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabelrom" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabelrom">Romans Progress</h4>
+        </div>
+        <div class="modal-body">
+          <div class="checkbox">
+            <label>
+              <input id="ch1r" type="checkbox"> Chapter 1
+            </label>
+            <br>
+            <label>
+              <input id="ch2r" type="checkbox"> Chapter 2
+            </label>
+            <br>
+            <label>
+              <input id="ch3r" type="checkbox"> Chapter 3
+            </label>
+            <br>
+            <label>
+              <input id="ch4r" type="checkbox"> Chapter 4
+            </label>
+            <br>
+            <label>
+              <input id="ch5r" type="checkbox"> Chapter 5
+            </label>
+            <br>
+            <label>
+              <input id="ch6r" type="checkbox"> Chapter 6
+            </label>
+            <br>
+            <label>
+              <input id="ch7r" type="checkbox"> Chapter 7
+            </label>
+            <br>
+            <label>
+              <input id="ch8r" type="checkbox"> Chapter 8
+            </label>
+            <br>
+            <label>
+              <input id="ch9r" type="checkbox"> Chapter 9
+            </label>
+            <br>
+            <label>
+              <input id="ch10r" type="checkbox"> Chapter 10
+            </label>
+            <br>
+            <label>
+              <input id="ch11r" type="checkbox"> Chapter 11
+            </label>
+            <br>
+            <label>
+              <input id="ch12r" type="checkbox"> Chapter 12
+            </label>
+            <br>
+            <label>
+              <input id="ch13r" type="checkbox"> Chapter 13
+            </label>
+            <br>
+            <label>
+              <input id="ch14r" type="checkbox"> Chapter 14
+            </label>
+            <br>
+            <label>
+              <input id="ch15r" type="checkbox"> Chapter 15
+            </label>
+            <br>
+            <label>
+              <input id="ch16r" type="checkbox"> Chapter 16
+            </label>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <p>Click to mark chapters as read</p>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="updateromdb">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+<div id="guestbook">
+  <div class="page-header">
+    <h1 id="guestbookheader">Leave a comment<br> <small>Let us know what you are thinking</small></h1>
+  </div>
+  <object data=http://ccftracker2014.appspot.com style="width:100%;height:400px">  </object>
+</div>
+
+</div>
+</div>
+</div>
+<br>
+<br>
+<footer>
+  <div class="container clearfix">
+    <p class="text-center">
+      Daniel Cheng · dyc8av@virginia.edu · <a href="http://html5.validator.nu/?doc=http%3A%2F%2Fplato.cs.virginia.edu%2F%7Edyc8av%2Ffinal%2Fprofile%2F">HTML5 validation results</a>
+    </p>
+  </div> 
+</footer>
+
+</div>
+
+</body>
+
+</html>
