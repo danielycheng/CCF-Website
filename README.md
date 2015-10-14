@@ -1,18 +1,19 @@
 # Chinese Christian Fellowship Website
 
 ##Purpose
-This website will be tracking the progress of users as they read through a book in the Bible. There will be visual feedback on their progress. 
+This website was designed for Chinese Christian Fellowship (CCF) at the University of Virginia. The main purpose was to allow users participating in CCF's Bible Studies to track their progress on several books of the Bible as well as to allow a place for common discussion. 
 
 Features:
-- Display current progress through bible verses and the chapter and verses
-- Display image that represents a progress bar
-- Form to fill stating what you have read, and place to put comments on how it was, will update the progress bar and display the current chapter
-- ability to add and delete comments
-- Button to create account and add users 
+- Easy to use interface to update progress and provide immediate visual feedback.
+- Provides a counter for number of words in certain books.
+- Displays daily motivational verses that change.
+- Incorporates a comment box where users can anonymously post comments.
+- Ability for anyone to create an account and become a user.
 
 ## Technologies Used
 - LAMP server
 - HTML5/CSS/JavaScript
+- jQuery/AJAX
 - PHP and phpMyAdmin
 - MySQL
 - Bootstrap
