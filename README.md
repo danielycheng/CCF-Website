@@ -11,7 +11,7 @@ Features:
 - Ability for anyone to create an account and become a user.
 
 ## Technologies Used
-- LAMP server
+- LAMP stack
 - HTML5/CSS/JavaScript
 - jQuery/AJAX
 - PHP and phpMyAdmin
